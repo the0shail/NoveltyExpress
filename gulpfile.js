@@ -37,7 +37,7 @@ function scripts() {
 
 function styles() {
     return src('app/scss/style.scss')
-        .pipe(scss({ style:'compact' }).on('error', scss.logError))
+        .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
         .pipe(concat("style.min.css"))
         .pipe(autoprefixer({ 
             overrideBrowserslist: ['last 10 version'],
